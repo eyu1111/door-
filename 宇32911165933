@@ -1,17 +1,1 @@
--- Roblox脚本的密钥
-local correctKey = "mySecretKey"
-
--- 获取传递的密钥参数
-local query = string.match(debug.info(2, "s"), "key=(%w+)")
-
--- 如果没有提供密钥或密钥不正确，模拟404
-if not query or query ~= correctKey then
-    -- 模拟404错误，直接返回空值
-    return error("404: Not Found")
-end
-
--- 密钥正确时，继续加载你的脚本
-print("密钥验证通过，加载主脚本")
-
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/mspaint/main/main.lua"))()
