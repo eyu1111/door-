@@ -1,1 +1,15 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/mspaint/main/main.lua"))()
+local url = "https://raw.githubusercontent.com/notpoiu/mspaint/main/main.lua"
+local secretKey = "3291165933"
+
+-- 从当前的请求中获取 key 参数
+local query = game:HttpGet("https://raw.githubusercontent.com/eyu1111/door-/refs/heads/main/%E5%AE%8732911165933")
+local params = string.match(query, "key=(%w+)")  -- 获取 key 的值
+
+-- 验证密钥
+if params ~= secretKey then
+    error("Unauthorized access")
+    return
+end
+
+-- 如果密钥正确，则加载脚本
+loadstring(game:HttpGet(url))()
