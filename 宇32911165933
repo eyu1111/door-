@@ -1,16 +1,17 @@
--- 设置密钥
-local correctKey = "3291165933"
+-- Roblox脚本的密钥
+local correctKey = "mySecretKey"
 
--- 从 URL 中获取密钥参数
-local url = "https://raw.githubusercontent.com/eyu1111/door-/refs/heads/main/%E5%AE%8732911165933"
-local key = string.match(url, "key=(%w+)")
+-- 获取传递的密钥参数
+local query = string.match(debug.info(2, "s"), "key=(%w+)")
 
--- 验证密钥
-if key ~= correctKey then
-    error("Unauthorized access: Invalid key.")
-    return
+-- 如果没有提供密钥或密钥不正确，模拟404
+if not query or query ~= correctKey then
+    -- 模拟404错误，直接返回空值
+    return error("404: Not Found")
 end
 
--- 加载主脚本
-local mainScriptUrl = "https://raw.githubusercontent.com/notpoiu/mspaint/main/main.lua"
-loadstring(game:HttpGet(mainScriptUrl))()
+-- 密钥正确时，继续加载你的脚本
+print("密钥验证通过，加载主脚本")
+
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/mspaint/main/main.lua"))()
