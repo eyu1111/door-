@@ -10365,9 +10365,9 @@ function UICreator:CreateSettingsTab()
     CreditsGroup:AddLabel("mstudio45")
     CreditsGroup:AddLabel("bacalhauz")
     CreditsGroup:AddLabel("devs")
-    CreditsGroup:AddLabel("汉化作者:R-Exploit")
-    CreditsGroup:AddLabel("测试员:NIDO_MUNCISEEK--")   
-    CreditsGroup:AddLabel("汉化修补:小玄奘【XK脚本中心作者】")
+    CreditsGroup:AddLabel("汉化作者:R-Exx")
+    CreditsGroup:AddLabel("测试员:exx--")   
+    CreditsGroup:AddLabel("汉化修补:鳄小想【脚本中心作者】")
 
     shared.Library.ToggleKeybind = shared.Options.MenuKeybind
 
